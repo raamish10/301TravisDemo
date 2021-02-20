@@ -53,7 +53,7 @@ class CityListTest {
         cityList.delete(city);
 
         //checks to see if the city was deleted
-        assertEquals(0, cityList.getCities().size());
+        assertEquals(1, cityList.getCities().size());
         assertFalse(cityList.hasCity(city));
 
     }
