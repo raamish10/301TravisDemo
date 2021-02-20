@@ -35,4 +35,27 @@ class CityListTest {
         assertEquals(0, mockCity().compareTo(cityList.getCities().get(0)));
     }
 
+    @Test
+    void testDelete() throws Exception {
+
+        CityList cityList = mockCityList();
+
+        //checks to see if mockcity() worked
+        assertEquals(1, cityList.getCities().size());
+
+        //creates a new city and adds it to the list
+        City city = new City("Regina", "Saskatchewan");
+        cityList.add(city);
+        //checks to see if it was added to the list
+        assertEquals(2, cityList.getCities().size());
+
+        //deletes the recently added city
+        cityList.delete(city);
+
+        //checks to see if the city was deleted
+        assertEquals(0, cityList.getCities().size());
+        assertFalse(cityList.hasCity(city));
+
+    }
+
 }
